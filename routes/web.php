@@ -26,11 +26,11 @@ Route::get('/dashboard', function () {
 
 Route::get('auth/google', function(){
     return Socialite::driver('google')->redirect();
-})
+});
 
 Route::get('auth/google/callback', function(){
     $user = Socialite::driver('google')->stateless()->user();
-})
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/sample', IndexController::class)->name('sample.index');
