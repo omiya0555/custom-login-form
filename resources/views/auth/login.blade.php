@@ -48,9 +48,17 @@
         <form>
             <hr style="margin:30px 0 15px 0;"/>
             <span class="flex justify-center text-gray-600">
-                or with ..
+                or
             </span>
-            
+            <div class="flex justify-center">
+                <a href="{{ url('auth/google') }}" class="flex items-center border rounded-lg p-2 mt-4">
+                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-5 h-5" />
+                    <span class="ml-3">
+                        Login with Google
+                    </span>
+                </a>
+            </div>
+
         </form>
     </div>
 </x-guest-layout>
