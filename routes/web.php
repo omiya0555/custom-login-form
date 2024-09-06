@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Sample\IndexController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Fcades\Socialite;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
