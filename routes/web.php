@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Sample\IndexController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Fcades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('auth/google', function(){
+    return Socialite::driver('google')->redirect();
+})
+
+Route::get('auth/google/callback', function(){
+    $user = Socialite::driver('google')->stateless()->user();
+})
 
 Route::middleware('auth')->group(function () {
     Route::get('/sample', IndexController::class)->name('sample.index');
